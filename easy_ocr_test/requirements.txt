@@ -1,0 +1,5 @@
+# pytesseract==0.3.8
+torch
+easyocr==1.6.2
+opencv-python==4.5.3.56
+# 여기에 다른 라이브러리들을 추가
