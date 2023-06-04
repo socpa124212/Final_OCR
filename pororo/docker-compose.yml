@@ -1,0 +1,14 @@
+version: '3'
+
+# 실행하려는 컨테이너들 정의
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+    tty: true
+    stdin_open: true 
