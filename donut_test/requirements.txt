@@ -1,0 +1,9 @@
+# pytesseract==0.3.8
+torch==1.11.0
+torchvision==0.12.0
+pytorch-lightning==1.6.4
+transformers
+timm==0.5.4
+donut-python
+opencv-python==4.5.3.56
+# 여기에 다른 라이브러리들을 추가
