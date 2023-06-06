@@ -1,0 +1,23 @@
+# config.yaml
+
+path:
+  img_path: ./assets/image_data
+  text_path: ./assets/ocr_result(ocr+gpt)/
+ocr_params:
+  task: ocr
+  lang: ko
+  output: .txt
+gpt_params:
+  api_key: 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 # should be deleted
+  engine: text-davinci-003
+  max_tokens: 1500
+gpt_prompt:
+  prompt : 
+    '''
+
+    Above text data is korean food information label that is not parsed. 
+    Also partial correction is needed.
+    Parse and correct given text data as possible as you can.
+    Most of the word should be related with food.
+    text data should be in Korean
+    '''
