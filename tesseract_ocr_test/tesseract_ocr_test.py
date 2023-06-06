@@ -19,3 +19,4 @@ extracted_text = ocr_image(image_path)
 
 # 추출된 텍스트 출력
 print(extracted_text)
+
