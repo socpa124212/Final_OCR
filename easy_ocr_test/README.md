@@ -18,17 +18,17 @@ opencv-python
 
 To install Easy OCR, follow these steps:
 
-1.Clone the repository:
+1. Clone the repository:
 
-`git clone https://github.com/socpa124212/Final_OCR.git`
+```git clone https://github.com/socpa124212/Final_OCR.git```
 
 2. Navigate to the project directory:
 
-`cd Final_OCR/easy_ocr_test`
+```cd Final_OCR/easy_ocr_test```
 
 3. Install the module using pip:
 
-`pip install easyocr`
+```pip install easyocr```
 
 
 ## Usage
