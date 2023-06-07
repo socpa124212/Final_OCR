@@ -8,9 +8,7 @@ Easy OCR is a simple and efficient optical character recognition (OCR) tool that
 ## Requirements
 
 torch
-
 easyocr
-
 opencv-python
 
 
