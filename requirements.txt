@@ -1,0 +1,10 @@
+pororo
+easyocr
+paddleocr
+pytesseract
+torch==1.6.0
+torchvision==0.7.0
+openai
+paddlepaddle -i https://pypi.tuna.tsinghua.edu.cn/simple
+omegaconf
+hydra-core
