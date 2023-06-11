@@ -6,7 +6,16 @@ path:
   output_ext: .txt
 
 ocr:
-  api: pororo # pororo, easy, paddle, tesseract, is avilable
+  api: pororo # pororo, easy, tesseract, paddle is avilable
+  pororo:
+    lang: ko
+  easy:
+    lang: ['ko', 'en']
+    GPU: False
+  tesseract:
+    lang: kor
+  paddle:
+    lang: korean
 
 gpt_params:
   api_key: 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 # should be deleted
@@ -23,3 +32,13 @@ gpt_prompt:
     Most of the word should be related with food.
     text data should be in Korean
     '''
+
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

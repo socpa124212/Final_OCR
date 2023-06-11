@@ -1,6 +1,8 @@
 FROM python:3.8
 
+# 패키지 설치를 위해서 터미널을 interactive하지 않게 변경
 ENV DEBIAN_FRONTEND=noninteractive
+
 # 작업 디렉토리를 설정
 WORKDIR /app
 
