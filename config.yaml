@@ -18,7 +18,7 @@ ocr:
     lang: korean
 
 gpt_params:
-  api_key: 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 # should be deleted
+  api_key: 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 # should be deleted
   engine: text-davinci-003
   max_tokens: 1500
 
