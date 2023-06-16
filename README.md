@@ -21,7 +21,7 @@
 
 2. Git Repository를 Clone하십시오.
 ```
-git clone https://github.com/socpa124212/Final_OCR
+git clone https://github.com/socpa124212/Final_OCR.git
 cd Final_OCR
 ```
 
@@ -34,13 +34,13 @@ docker-compose up
 #### Python 환경에서 직접 실행하는 방법
 1. Git Repository를 Clone하십시오.
 ```
-git clone https://github.com/socpa124212/Final_OCR
+!git clone https://github.com/socpa124212/Final_OCR.git
 cd Final_OCR
 ```
 
 2. 필요한 Python 라이브러리를 설치하십시오.
 ```
-pip install -r requirements.txt
+!pip install -r requirements.txt
 ```
 
 3. OCR를 실행하십시오.
