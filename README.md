@@ -45,7 +45,7 @@ cd Final_OCR
 
 3. OCR를 실행하십시오.
 ```
-python run_ocr.py
+!python run_ocr.py
 ```
 
 ### 주의사항
