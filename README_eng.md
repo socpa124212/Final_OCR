@@ -1,4 +1,4 @@
-English | [한국어](README_eng.md)
+English | [한국어](README.md)
 
 # Final_OCR
 This project includes code that uses Optical Character Recognition (OCR) to extract text from images and then uses the GPT model to analyze and correct the extracted text.
