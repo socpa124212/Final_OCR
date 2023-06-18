@@ -1,8 +1,8 @@
 # config.yaml
 
 path:
-  img_pth: ./assets/image_data
-  text_pth: ./assets/ocr_result(ocr+gpt)/
+  img_pth: ./assets/image_data/data (2)
+  text_pth: ./assets/ocr_result(ocr+gpt)/data/ # need '/' at last
   output_ext: .txt
 
 ocr:
@@ -25,9 +25,12 @@ gpt_params:
 gpt_prompt:
   prompt : 
     '''
-    Parse, correct, align, translate, and document this unparsed Korean food label data.
-    Ensure the words pertain to food, use common sense for awkward word corrections.
-    The final output should be in Korean.
+    Given the text extracted from an OCR process of a Korean food label, perform the following tasks:
+    Parse the text and correct any errors or inconsistencies.
+    Align the text for proper organization and readability.
+    Translate the text into Korean, ensuring that the words pertain to food.
+    Document the processed data with appropriate formatting, including indentation and line breaks.
+    Please make sure that the final output is in Korean while maintaining the accuracy and integrity of the original information.
     '''
 
 defaults:  

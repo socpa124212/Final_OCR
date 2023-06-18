@@ -13,5 +13,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 # open-cv dependecy file update
 # tesseract-ocr 설치
+# libtesseract4 설치가 되지 않는 상태가 있음
 RUN apt-get update && apt-get -y install libgl1-mesa-glx
-RUN apt-get update && apt-get -y install tesseract-ocr libtesseract4 tesseract-ocr-kor
+RUN apt-get update && apt-get -y install tesseract-ocr tesseract-ocr-kor

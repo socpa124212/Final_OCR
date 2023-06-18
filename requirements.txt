@@ -8,3 +8,4 @@ openai
 paddlepaddle -i https://pypi.tuna.tsinghua.edu.cn/simple
 omegaconf
 hydra-core
+tiktoken
