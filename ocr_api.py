@@ -11,6 +11,7 @@ class ocr_api :
         self,
         config: OmegaConf
         ) -> None:
+        # init function for ocr_api function it will push your config file to use ocr api
 
         self.config = config
 
@@ -19,6 +20,7 @@ class ocr_api :
         self, 
         img_pth: str
         ) -> str:
+        # OCR api that use pororo
 
         ocr = Pororo(task="ocr", lang=self.config.ocr.pororo.lang)
         result = ocr(img_pth)
@@ -30,6 +32,7 @@ class ocr_api :
         self, 
         img_pth: str
         ) -> str:
+        # OCR api that use EasyOCR
 
         reader = easyocr.Reader(self.config.ocr.easy.lang, gpu=self.config.ocr.easy.GPU)
         result = reader.readtext(img_pth)
@@ -44,6 +47,7 @@ class ocr_api :
         self, 
         img_pth: str
         ) -> str:
+        # OCR api that use tesseract
 
         image = Image.open(img_pth)
         text = pytesseract.image_to_string(image, lang=self.config.ocr.tesseract.lang)
@@ -56,6 +60,7 @@ class ocr_api :
         self, 
         img_pth: str
         ) -> str :
+        # OCR api that use paddleocr
 
         ocr = PaddleOCR(use_angle_cls=True, lang=self.config.ocr.paddle.lang)
         result = ocr.ocr(img_pth, cls=True)

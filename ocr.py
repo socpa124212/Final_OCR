@@ -11,6 +11,7 @@ class OCR:
         self,
         config: OmegaConf
         ) -> None:
+        # making most upper class OCR it must include config.yaml in your file
 
         self.config = config
         self.ocr_api = ocr_api(config)
@@ -28,6 +29,8 @@ class OCR:
         self,
         ocr_script: str,
         ) -> str:
+        # sending your script to GPT api, and it will return parsed and corrected string data
+        # Input must be script of ocr result from data
 
         openai.api_key = self.config.gpt_params.api_key
         tokens_number = self.count_tokens(ocr_script)
@@ -74,16 +77,30 @@ class OCR:
 
         return text
 
-    def count_tokens(self, script):
+    def count_tokens(
+        self, 
+        script:str,
+        ) -> int:
+        # return your counts of token
+
         engine = self.config.gpt_params.engine
         encoding = tiktoken.encoding_for_model(engine)
         tokens_integer = encoding.encode(str(script))
+
         return len(tokens_integer)
 
     def File_gen(self) -> None:
-        img_dir = self.config.path.img_pth
+        # Final function that you will use for ultimate use
+        # it will follow your image directory and iter all image in directory
 
+        img_dir = self.config.path.img_pth
+        text_dir = self.config.path.text_pth
+
+        # 결과 디렉토리에 중복되는 파일이 있으면 목록에서 제외
         file_list = os.listdir(img_dir)
+        text_list = [t_file[:-4] for t_file in os.listdir(text_dir)]
+        file_list = list(set(file_list) - set(text_list))
+
         file_path_list = [os.path.join(img_dir, file) for file in file_list]
 
         for path in file_path_list:
@@ -94,15 +111,16 @@ class OCR:
             end = time.time() # 이미지 처리 종료시간 기록:wq
 
             execution = end - start 
-            file_name = os.path.basename(path)
+            file_name = os.path.basename(path[:-4])
+            print(file_name)
             output = self.config.path.text_pth + file_name + self.config.path.output_ext
 
-            S_time = str(datetime.utcfromtimestamp(start).strftime('%H:%M:%S')) # UTC 기준으로 표시되는 시간표기
-            E_time = str(datetime.utcfromtimestamp(end).strftime('%H:%M:%S')) 
+            S_time = str(datetime.utcfromtimestamp(start).strftime('%Y-%m-%d %H:%M:%S')) # UTC 기준으로 표시되는 시간표기
+            E_time = str(datetime.utcfromtimestamp(end).strftime('%Y-%m-%d %H:%M:%S')) 
 
             with open(output, "w") as file: # file output write
                 file.write("<ocr result " + self.config.ocr.api + ">\n")
                 file.write(''.join(script) + "\n\n")
-                file.write("<gpt parsing+correction>")
+                file.write("<gpt parsing+correction>\n")
                 file.write(result + "\n\n")
-                file.write(f"lenth: {tokens}\nstart : {S_time}\nend : {E_time}\nduration : {execution:.2f}")
+                file.write(f"length: {tokens}\nstart : {S_time}\nend : {E_time}\nduration : {execution:.2f}")

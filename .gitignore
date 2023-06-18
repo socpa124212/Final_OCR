@@ -190,4 +190,6 @@ pyrightconfig.json
 
 # for kakao pororo tmp file
 *.tmp
+# config 파일을 더이상 추적하지 않도록 변겅
+config.yaml
 # End of https://www.toptal.com/developers/gitignore/api/python,linux

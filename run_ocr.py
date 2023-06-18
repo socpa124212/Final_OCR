@@ -5,6 +5,8 @@ import time
 
 @hydra.main(version_base=None, config_path="./", config_name="config")
 def run_ocr(config) -> None:
+    # main function
+    
     ocr_instance = OCR(config = config) # config 호출
     ocr_instance.File_gen()
 
