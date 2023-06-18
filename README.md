@@ -1,3 +1,5 @@
+[English](README_eng.md) | 한국어
+
 # Final_OCR
 이 프로젝트는 OCR(Optical Character Recognition)을 통해 이미지로부터 텍스트를 추출하고, 추출된 텍스트를 GPT 모델을 이용하여 분석하고 수정하는 코드입니다.
 
